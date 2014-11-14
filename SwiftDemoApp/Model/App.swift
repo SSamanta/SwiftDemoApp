@@ -10,7 +10,9 @@ import UIKit
 
 class App: NSObject {
     var appName : NSString?
+    var appThumnailImageLink : NSString?
      init(dict : NSDictionary) {
         self.appName = dict["im:name"]!["label"] as NSString?
+        self.appThumnailImageLink =  dict["im:image"]![0]["label"] as NSString?
     }
 }

@@ -32,10 +32,10 @@ class RootVC: UIViewController {
     }
     
      func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let identifier = "Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
+        let identifier = "CustomAppCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as CustomAppCell
         let app = self.allApps[indexPath.row] as App
-        cell.textLabel?.text = app.appName
+        cell.refreshWithDataSource(app)
         return cell
     }
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
