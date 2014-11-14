@@ -17,7 +17,7 @@ class RootVC: UIViewController {
         self.title = "Apps"
         var svmgr = ServiceManager()
         svmgr.getAppDataOnCompletion { (appsArray, error) -> Void in
-    		self.allApps =  appsArray!
+    		self.allApps =  appsArray! as NSArray
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
             })

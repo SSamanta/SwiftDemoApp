@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias ServiceCompletionHandler = (obj:NSArray?, error :NSError?) ->Void
+typealias ServiceCompletionHandler = (obj:AnyObject?, error :NSError?) ->Void
 
 class ServiceManager: NSObject {
     func getAppDataOnCompletion(serviceCompletionHandler : ServiceCompletionHandler) {
