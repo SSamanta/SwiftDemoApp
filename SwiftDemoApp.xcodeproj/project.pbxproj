@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5595AA621A15EF97000887B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5595AA611A15EF97000887B1 /* Default-568h@2x.png */; };
 		5595AA631A15EF97000887B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5595AA611A15EF97000887B1 /* Default-568h@2x.png */; };
+		5595AA991A16038E000887B1 /* SSRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595AA981A16038E000887B1 /* SSRestClient.swift */; };
 		55C6174A1950692B0088F3B1 /* SwiftDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C617491950692B0088F3B1 /* SwiftDemoAppTests.swift */; };
 		55C6175C1950698F0088F3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C617561950698F0088F3B1 /* AppDelegate.swift */; };
 		55C6175E195069C60088F3B1 /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C6175D195069C60088F3B1 /* iPhoneStoryboard.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		5595AA611A15EF97000887B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5595AA981A16038E000887B1 /* SSRestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRestClient.swift; sourceTree = "<group>"; };
 		55C617361950692B0088F3B1 /* SwiftDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C617431950692B0088F3B1 /* SwiftDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C617481950692B0088F3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +71,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		5595AA961A16033C000887B1 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				5595AA971A160362000887B1 /* RestClient */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		5595AA971A160362000887B1 /* RestClient */ = {
+			isa = PBXGroup;
+			children = (
+				5595AA981A16038E000887B1 /* SSRestClient.swift */,
+			);
+			path = RestClient;
+			sourceTree = "<group>";
+		};
 		55C6172D1950692B0088F3B1 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +108,7 @@
 		55C617381950692B0088F3B1 /* SwiftDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				5595AA961A16033C000887B1 /* External */,
 				5595AA601A15EF97000887B1 /* Resources */,
 				55C617531950698F0088F3B1 /* Configs */,
 				55C617551950698F0088F3B1 /* Application */,
@@ -274,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5595AA991A16038E000887B1 /* SSRestClient.swift in Sources */,
 				55C6177219507AE70088F3B1 /* RootVC.swift in Sources */,
 				55C6175C1950698F0088F3B1 /* AppDelegate.swift in Sources */,
 				55C6177119507AE70088F3B1 /* DetailsVC.swift in Sources */,
