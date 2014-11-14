@@ -9,5 +9,8 @@
 import UIKit
 
 class App: NSObject {
-   
+    var appName : NSString?
+     init(dict : NSDictionary) {
+        self.appName = dict["im:name"]!["label"] as NSString?
+    }
 }
