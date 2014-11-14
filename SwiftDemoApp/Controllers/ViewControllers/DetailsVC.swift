@@ -9,15 +9,18 @@
 import UIKit
 
 class DetailsVC: UIViewController {
+    @IBOutlet var descriptionTv : UITextView!
+    var app : App?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = self.app?.appName
+        self.descriptionTv.text =  self.app?.appSummary;
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     func refreshWithDataSource(app : App) {
-        self.title = app.appName
+        self.app = app
     }
 }
