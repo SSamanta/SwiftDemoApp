@@ -11,10 +11,13 @@ import UIKit
 class DetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Apps Details"
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    func refreshWithDataSource(app : App) {
+        self.title = app.appName
     }
 }

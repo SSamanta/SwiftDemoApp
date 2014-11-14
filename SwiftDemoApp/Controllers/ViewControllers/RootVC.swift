@@ -11,6 +11,7 @@ import UIKit
 class RootVC: UIViewController {
     @IBOutlet var tableView:UITableView!
     var allApps = [];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Apps"
@@ -39,6 +40,7 @@ class RootVC: UIViewController {
     }
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!){
         let detailsVC :DetailsVC = storyboard?.instantiateViewControllerWithIdentifier("DetailsVC") as DetailsVC
+        detailsVC.refreshWithDataSource(self.allApps[indexPath.row] as App)
         self.navigationController?.pushViewController(detailsVC, animated:true);
     }
 }
