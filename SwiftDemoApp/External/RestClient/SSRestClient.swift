@@ -28,4 +28,16 @@ class SSRestClient: NSObject {
         })
         task.resume()
     }
+    func getResponseData(urlString :NSString?,restClientHandler : SSRestClientHandler) {
+        var request = NSMutableURLRequest(URL: NSURL(string: urlString!)!)
+        var session = NSURLSession.sharedSession()
+        var task = session.dataTaskWithRequest(request, completionHandler: { (data, response , error) -> Void in
+            if (error == nil) {
+				restClientHandler (obj: data, error: nil)
+            }else {
+                restClientHandler(obj: nil,error: error)
+            }
+        })
+        task.resume()
+    }
 }
