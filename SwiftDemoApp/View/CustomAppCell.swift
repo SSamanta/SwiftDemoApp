@@ -10,6 +10,8 @@ import UIKit
 
 class CustomAppCell: UITableViewCell {
     @IBOutlet var appNameLbl : UILabel!
+    @IBOutlet var appPriceLbl : UILabel!
+    @IBOutlet var appArtistLbl : UILabel!
     @IBOutlet var thumnailImageView : UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +25,8 @@ class CustomAppCell: UITableViewCell {
     }
     func refreshWithDataSource(app:App) {
         self.appNameLbl.text =  app.appName
+        self.appArtistLbl.text =  app.appArtists
+        self.appPriceLbl.text =  app.appPrice
         var restClient = SSRestClient()
 		restClient.getResponseData(app.appThumnailImageLink, restClientHandler: { (obj, error) -> Void in
             if (error == nil) {
