@@ -32,7 +32,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hfc-iR-bdQ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Default-568h@2x" translatesAutoresizingMaskIntoConstraints="NO" id="Hfc-iR-bdQ">
                                                     <rect key="frame" x="17" y="8" width="57" height="56"/>
                                                 </imageView>
                                             </subviews>
@@ -98,6 +98,9 @@
             <point key="canvasLocation" x="-119" y="236"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Default-568h@2x" width="16" height="16"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

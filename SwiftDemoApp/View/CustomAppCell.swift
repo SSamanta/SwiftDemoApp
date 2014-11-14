@@ -23,6 +23,18 @@ class CustomAppCell: UITableViewCell {
     }
     func refreshWithDataSource(app:App) {
         self.appNameLbl.text =  app.appName
+        var restClient = SSRestClient()
+		restClient.getResponseData(app.appThumnailImageLink, restClientHandler: { (obj, error) -> Void in
+            if (error == nil) {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    var imageData =  obj as NSData?
+                    var bgImage = UIImage(data: imageData!)
+                    self.thumnailImageView.image = bgImage})
+            }else {
+                print(error)
+            }
+
+        })
     }
 
 }
