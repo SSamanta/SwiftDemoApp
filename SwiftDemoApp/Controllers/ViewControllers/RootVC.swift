@@ -9,17 +9,20 @@
 import UIKit
 
 class RootVC: UIViewController {
-    @IBOutlet var tableView:UITableView!
+    @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var activityIndicatorView : UIActivityIndicatorView!
     var allApps = [];
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Apps"
+        self.activityIndicatorView.startAnimating()
         var svmgr = ServiceManager()
         svmgr.getAppDataOnCompletion { (appsArray, error) -> Void in
     		self.allApps =  appsArray! as NSArray
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
+                self.activityIndicatorView.stopAnimating()
             })
         }
     }

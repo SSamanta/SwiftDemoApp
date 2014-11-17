@@ -9,10 +9,10 @@
 import UIKit
 
 class CustomAppCell: UITableViewCell {
-    @IBOutlet var appNameLbl : UILabel!
-    @IBOutlet var appPriceLbl : UILabel!
-    @IBOutlet var appArtistLbl : UILabel!
-    @IBOutlet var thumnailImageView : UIImageView!
+    @IBOutlet weak var appNameLbl : UILabel!
+    @IBOutlet weak var appPriceLbl : UILabel!
+    @IBOutlet weak var appArtistLbl : UILabel!
+    @IBOutlet weak var thumnailImageView : UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

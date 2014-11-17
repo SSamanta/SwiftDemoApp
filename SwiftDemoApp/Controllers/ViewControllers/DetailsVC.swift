@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailsVC: UIViewController {
-    @IBOutlet var descriptionTv : UITextView!
+    @IBOutlet weak var descriptionTv : UITextView!
     var app : App?
     override func viewDidLoad() {
         super.viewDidLoad()
