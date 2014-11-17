@@ -12,7 +12,7 @@ typealias ServiceCompletionHandler = (obj:AnyObject?, error :NSError?) ->Void
 
 class ServiceManager: NSObject {
     func getAppDataOnCompletion(serviceCompletionHandler : ServiceCompletionHandler) {
-        var urlString : NSString = "http://itunes.apple.com/us/rss/topfreeapplications/limit=100/json";
+        var urlString : NSString = kItunesURLString;
         var restClient = SSRestClient()
 		restClient.getJsonData(urlString, restClientHandler: { (obj , error) -> Void in
             var dict : NSDictionary = obj! as NSDictionary
