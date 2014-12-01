@@ -13,8 +13,8 @@ class DetailsVC: UIViewController {
     var app : App?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = self.app?.appName
-        self.descriptionTv.text =  self.app?.appSummary;
+        self.title = self.app!.appName
+        self.descriptionTv.text =  self.app!.appSummary;
     }
 
     override func didReceiveMemoryWarning() {
