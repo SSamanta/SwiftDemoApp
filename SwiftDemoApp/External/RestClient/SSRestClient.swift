@@ -16,13 +16,15 @@ class SSRestClient: NSObject {
         var task = session.dataTaskWithRequest(request, completionHandler: { (data, response , error) -> Void in
             if (error == nil) {
                 var jsonError : NSError?
-                var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &jsonError) as? NSDictionary
-				if (jsonError == nil) {
-                    restClientHandler(obj: json as AnyObject?,error: nil)
+                var json : AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &jsonError)
+                if let object = json as? Array <AnyObject> {
+                    restClientHandler(obj: object ,error: nil)
+                }else if let object = json as? Dictionary <String, AnyObject> {
+                    restClientHandler(obj: object ,error: nil)
                 }else {
-                    restClientHandler(obj: nil,error: jsonError)
+                    restClientHandler(obj: nil,error:jsonError)
                 }
-			}else {
+            }else {
                 restClientHandler(obj: nil,error: error)
             }
         })
