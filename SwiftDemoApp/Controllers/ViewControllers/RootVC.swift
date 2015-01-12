@@ -16,6 +16,8 @@ class RootVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.loadDataSource()
+        self.tableView.estimatedRowHeight = 44.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     func loadDataSource() {
         self.title = "Apps"

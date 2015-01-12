@@ -14,7 +14,7 @@
 		5595AA9B1A160CA4000887B1 /* CustomAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595AA9A1A160CA4000887B1 /* CustomAppCell.swift */; };
 		55C6174A1950692B0088F3B1 /* SwiftDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C617491950692B0088F3B1 /* SwiftDemoAppTests.swift */; };
 		55C6175C1950698F0088F3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C617561950698F0088F3B1 /* AppDelegate.swift */; };
-		55C6175E195069C60088F3B1 /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C6175D195069C60088F3B1 /* iPhoneStoryboard.storyboard */; };
+		55C6175E195069C60088F3B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C6175D195069C60088F3B1 /* Main.storyboard */; };
 		55C6177119507AE70088F3B1 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6176E19507AE70088F3B1 /* DetailsVC.swift */; };
 		55C6177219507AE70088F3B1 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6176F19507AE70088F3B1 /* RootVC.swift */; };
 		55C6177419507B3C0088F3B1 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6177319507B3C0088F3B1 /* ServiceManager.swift */; };
@@ -42,7 +42,7 @@
 		55C617491950692B0088F3B1 /* SwiftDemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoAppTests.swift; sourceTree = "<group>"; };
 		55C617541950698F0088F3B1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C617561950698F0088F3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55C6175D195069C60088F3B1 /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
+		55C6175D195069C60088F3B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		55C6176E19507AE70088F3B1 /* DetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		55C6176F19507AE70088F3B1 /* RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
 		55C6177319507B3C0088F3B1 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		55C617591950698F0088F3B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				55C6175D195069C60088F3B1 /* iPhoneStoryboard.storyboard */,
+				55C6175D195069C60088F3B1 /* Main.storyboard */,
 				5595AA9A1A160CA4000887B1 /* CustomAppCell.swift */,
 			);
 			path = View;
@@ -279,7 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55C6175E195069C60088F3B1 /* iPhoneStoryboard.storyboard in Resources */,
+				55C6175E195069C60088F3B1 /* Main.storyboard in Resources */,
 				5595AA621A15EF97000887B1 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +414,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftDemoApp/Configs/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -425,6 +426,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftDemoApp/Configs/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
