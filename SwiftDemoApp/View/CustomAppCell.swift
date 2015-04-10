@@ -32,7 +32,7 @@ class CustomAppCell: UITableViewCell {
 		restClient.getResponseData(app.appThumnailImageLink, restClientHandler: { (obj, error) -> Void in
             if (error == nil) {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    var imageData =  obj as NSData?
+                    var imageData =  obj as! NSData?
                     var bgImage = UIImage(data: imageData!)
                     self.thumnailImageView.image = bgImage})
             }else {

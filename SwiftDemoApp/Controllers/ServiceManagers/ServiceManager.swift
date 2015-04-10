@@ -15,11 +15,11 @@ class ServiceManager: NSObject {
         var urlString : NSString = kItunesURLString;
         var restClient = SSRestClient()
 		restClient.getJsonData(urlString, restClientHandler: { (obj , error) -> Void in
-            var dict : NSDictionary = obj! as NSDictionary
+            var dict : NSDictionary = obj! as! NSDictionary
             if let apps = dict["feed"]!["entry"] as? NSArray{
                 var allApps = [App]()
                 for app in apps {
-                    allApps.append(App(dict: app as NSDictionary))
+                    allApps.append(App(dict: app as! NSDictionary))
                 }
                 serviceCompletionHandler(obj:allApps, error:error)
             }

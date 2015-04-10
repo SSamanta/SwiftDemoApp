@@ -11,7 +11,7 @@ typealias SSRestClientHandler = (obj : AnyObject? , error : NSError?) -> Void
 
 class SSRestClient: NSObject {
     func getJsonData(urlString :NSString?,restClientHandler : SSRestClientHandler) {
-        var request = NSMutableURLRequest(URL: NSURL(string: urlString!)!)
+        var request = NSMutableURLRequest(URL: NSURL(string: urlString! as String)!)
         var session = NSURLSession.sharedSession()
         var task = session.dataTaskWithRequest(request, completionHandler: { (data, response , error) -> Void in
             if (error == nil) {
@@ -31,7 +31,7 @@ class SSRestClient: NSObject {
         task.resume()
     }
     func getResponseData(urlString :NSString?,restClientHandler : SSRestClientHandler) {
-        var request = NSMutableURLRequest(URL: NSURL(string: urlString!)!)
+        var request = NSMutableURLRequest(URL: NSURL(string: urlString! as String)!)
         var session = NSURLSession.sharedSession()
         var task = session.dataTaskWithRequest(request, completionHandler: { (data, response , error) -> Void in
             if (error == nil) {

@@ -24,7 +24,7 @@ class RootVC: UIViewController {
         self.activityIndicatorView.startAnimating()
         var svmgr = ServiceManager()
         svmgr.getAppDataOnCompletion { (appsArray, error) -> Void in
-            self.allApps =  appsArray as [App]
+            self.allApps =  appsArray as! [App]
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
                 self.activityIndicatorView.stopAnimating()
@@ -40,13 +40,13 @@ class RootVC: UIViewController {
     
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identifier = "CustomAppCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as CustomAppCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! CustomAppCell
         let app = self.allApps[indexPath.row] as App
         cell.refreshWithDataSource(app)
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        let detailsVC :DetailsVC = storyboard?.instantiateViewControllerWithIdentifier("DetailsVC") as DetailsVC
+        let detailsVC :DetailsVC = storyboard?.instantiateViewControllerWithIdentifier("DetailsVC") as! DetailsVC
         detailsVC.refreshWithDataSource(self.allApps[indexPath.row] as App)
         self.navigationController?.pushViewController(detailsVC, animated:true);
     }
