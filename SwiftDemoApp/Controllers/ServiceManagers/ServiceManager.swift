@@ -12,10 +12,10 @@ typealias ServiceCompletionHandler = (obj:AnyObject?, error :NSError?) ->Void
 
 class ServiceManager: NSObject {
     func getAppDataOnCompletion(serviceCompletionHandler : ServiceCompletionHandler) {
-        var urlString : NSString = kItunesURLString;
-        var restClient = SSRestClient()
+        let urlString : NSString = kItunesURLString;
+        let restClient = SSRestClient()
 		restClient.getJsonData(urlString, restClientHandler: { (obj , error) -> Void in
-            var dict : NSDictionary = obj! as! NSDictionary
+            let dict : NSDictionary = obj! as! NSDictionary
             if let apps = dict["feed"]!["entry"] as? NSArray{
                 var allApps = [App]()
                 for app in apps {

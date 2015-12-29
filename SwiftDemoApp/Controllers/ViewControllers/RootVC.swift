@@ -22,7 +22,7 @@ class RootVC: UIViewController {
     func loadDataSource() {
         self.title = "Apps"
         self.activityIndicatorView.startAnimating()
-        var svmgr = ServiceManager()
+        let svmgr = ServiceManager()
         svmgr.getAppDataOnCompletion { (appsArray, error) -> Void in
             self.allApps =  appsArray as! [App]
             dispatch_async(dispatch_get_main_queue(), { () -> Void in

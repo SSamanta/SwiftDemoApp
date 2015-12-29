@@ -11,12 +11,20 @@ typealias SSRestClientHandler = (obj : AnyObject? , error : NSError?) -> Void
 
 class SSRestClient: NSObject {
     func getJsonData(urlString :NSString?,restClientHandler : SSRestClientHandler) {
-        var request = NSMutableURLRequest(URL: NSURL(string: urlString! as String)!)
-        var session = NSURLSession.sharedSession()
-        var task = session.dataTaskWithRequest(request, completionHandler: { (data, response , error) -> Void in
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString! as String)!)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response , error) -> Void in
             if (error == nil) {
                 var jsonError : NSError?
-                var json : AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &jsonError)
+                var json : AnyObject?
+                do {
+                    json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves)
+                } catch let error as NSError {
+                    jsonError = error
+                    json = nil
+                } catch {
+                    fatalError()
+                }
                 if let object = json as? Array <AnyObject> {
                     restClientHandler(obj: object ,error: nil)
                 }else if let object = json as? Dictionary <String, AnyObject> {
@@ -31,9 +39,9 @@ class SSRestClient: NSObject {
         task.resume()
     }
     func getResponseData(urlString :NSString?,restClientHandler : SSRestClientHandler) {
-        var request = NSMutableURLRequest(URL: NSURL(string: urlString! as String)!)
-        var session = NSURLSession.sharedSession()
-        var task = session.dataTaskWithRequest(request, completionHandler: { (data, response , error) -> Void in
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString! as String)!)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response , error) -> Void in
             if (error == nil) {
 				restClientHandler (obj: data, error: nil)
             }else {

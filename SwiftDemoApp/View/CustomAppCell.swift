@@ -28,15 +28,15 @@ class CustomAppCell: UITableViewCell {
         self.appArtistLbl.text =  app.appArtists
         //self.appPriceLbl.text =  app.appPrice
        
-        var restClient = SSRestClient()
+        let restClient = SSRestClient()
 		restClient.getResponseData(app.appThumnailImageLink, restClientHandler: { (obj, error) -> Void in
             if (error == nil) {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    var imageData =  obj as! NSData?
-                    var bgImage = UIImage(data: imageData!)
+                    let imageData =  obj as! NSData?
+                    let bgImage = UIImage(data: imageData!)
                     self.thumnailImageView.image = bgImage})
             }else {
-                print(error)
+                print(error, terminator: "")
             }
 
         })
