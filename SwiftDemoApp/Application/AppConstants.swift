@@ -7,4 +7,4 @@
 //
 
 import Foundation
-let kItunesURLString :String = "http://itunes.apple.com/us/rss/topfreeapplications/limit=100/json"
+let kItunesURLString :String = "https://itunes.apple.com/us/rss/topfreeapplications/limit=100/json"

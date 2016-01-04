@@ -25,9 +25,8 @@ class CustomAppCell: UITableViewCell {
     func refreshWithDataSource(app:App) {
         
         self.appNameLbl.text =  app.appName
-        self.appArtistLbl.text =  app.appArtists
-        //self.appPriceLbl.text =  app.appPrice
-       
+        self.appArtistLbl.text =  "Developed By \(app.appArtists!)"
+        self.setCircularImage(self.thumnailImageView)
         let restClient = SSRestClient()
 		restClient.getResponseData(app.appThumnailImageLink, restClientHandler: { (obj, error) -> Void in
             if (error == nil) {
@@ -41,5 +40,11 @@ class CustomAppCell: UITableViewCell {
 
         })
     }
-
+    func setCircularImage(image: UIImageView) {
+        image.layer.borderWidth = 1
+        image.layer.masksToBounds = false
+        image.layer.borderColor = UIColor.blackColor().CGColor
+        image.layer.cornerRadius = image.frame.height/2
+        image.clipsToBounds = true
+    }
 }
