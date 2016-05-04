@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2FE5281CD8C30D0042C122 /* SSHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2FE5271CD8C30D0042C122 /* SSHTTPClient.swift */; };
 		1C9289F11AD7E94C0086940A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C9289F01AD7E94C0086940A /* LaunchScreen.xib */; };
 		554A2BC31A19D68100AE6DC0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A2BC21A19D68100AE6DC0 /* AppConstants.swift */; };
 		5595AA621A15EF97000887B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5595AA611A15EF97000887B1 /* Default-568h@2x.png */; };
 		5595AA631A15EF97000887B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5595AA611A15EF97000887B1 /* Default-568h@2x.png */; };
-		5595AA991A16038E000887B1 /* SSRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595AA981A16038E000887B1 /* SSRestClient.swift */; };
 		5595AA9B1A160CA4000887B1 /* CustomAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5595AA9A1A160CA4000887B1 /* CustomAppCell.swift */; };
 		55C6174A1950692B0088F3B1 /* SwiftDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C617491950692B0088F3B1 /* SwiftDemoAppTests.swift */; };
 		55C6175C1950698F0088F3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C617561950698F0088F3B1 /* AppDelegate.swift */; };
@@ -33,10 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C2FE5271CD8C30D0042C122 /* SSHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHTTPClient.swift; sourceTree = "<group>"; };
 		1C9289F01AD7E94C0086940A /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		554A2BC21A19D68100AE6DC0 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		5595AA611A15EF97000887B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		5595AA981A16038E000887B1 /* SSRestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRestClient.swift; sourceTree = "<group>"; };
 		5595AA9A1A160CA4000887B1 /* CustomAppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAppCell.swift; sourceTree = "<group>"; };
 		55C617361950692B0088F3B1 /* SwiftDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C617431950692B0088F3B1 /* SwiftDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C2FE5261CD8C30D0042C122 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1C2FE5271CD8C30D0042C122 /* SSHTTPClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		5595AA601A15EF97000887B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,17 +88,9 @@
 		5595AA961A16033C000887B1 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				5595AA971A160362000887B1 /* RestClient */,
+				1C2FE5261CD8C30D0042C122 /* Networking */,
 			);
 			path = External;
-			sourceTree = "<group>";
-		};
-		5595AA971A160362000887B1 /* RestClient */ = {
-			isa = PBXGroup;
-			children = (
-				5595AA981A16038E000887B1 /* SSRestClient.swift */,
-			);
-			path = RestClient;
 			sourceTree = "<group>";
 		};
 		55C6172D1950692B0088F3B1 = {
@@ -305,9 +305,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5595AA991A16038E000887B1 /* SSRestClient.swift in Sources */,
 				55C6177219507AE70088F3B1 /* RootVC.swift in Sources */,
 				5595AA9B1A160CA4000887B1 /* CustomAppCell.swift in Sources */,
+				1C2FE5281CD8C30D0042C122 /* SSHTTPClient.swift in Sources */,
 				554A2BC31A19D68100AE6DC0 /* AppConstants.swift in Sources */,
 				55C6175C1950698F0088F3B1 /* AppDelegate.swift in Sources */,
 				55C6177119507AE70088F3B1 /* DetailsVC.swift in Sources */,

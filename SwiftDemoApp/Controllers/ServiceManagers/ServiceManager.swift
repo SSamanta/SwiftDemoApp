@@ -13,8 +13,8 @@ typealias ServiceCompletionHandler = (obj:AnyObject?, error :NSError?) ->Void
 class ServiceManager: NSObject {
     func getAppDataOnCompletion(serviceCompletionHandler : ServiceCompletionHandler) {
         let urlString : NSString = kItunesURLString;
-        let restClient = SSRestClient()
-		restClient.getJsonData(urlString, restClientHandler: { (obj , error) -> Void in
+        let apiclient = SSHTTPClient(url: urlString as String, method: "GET", httpBody: nil, headerFieldsAndValues: nil)
+		apiclient.getJsonData({ (obj , error) -> Void in
             let dict : NSDictionary = obj! as! NSDictionary
             if let apps = dict["feed"]!["entry"] as? NSArray{
                 var allApps = [App]()
@@ -23,7 +23,6 @@ class ServiceManager: NSObject {
                 }
                 serviceCompletionHandler(obj:allApps, error:error)
             }
-
         })
     }
 }

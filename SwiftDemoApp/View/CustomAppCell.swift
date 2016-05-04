@@ -27,8 +27,8 @@ class CustomAppCell: UITableViewCell {
         self.appNameLbl.text =  app.appName
         self.appArtistLbl.text =  "Developed By \(app.appArtists!)"
         self.setCircularImage(self.thumnailImageView)
-        let restClient = SSRestClient()
-		restClient.getResponseData(app.appThumnailImageLink, restClientHandler: { (obj, error) -> Void in
+        let apiClient = SSHTTPClient(url: app.appThumnailImageLink! as String, method: "GET", httpBody: nil, headerFieldsAndValues: nil)
+		apiClient.getResponseData({ (obj, error) -> Void in
             if (error == nil) {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     let imageData =  obj as! NSData?
