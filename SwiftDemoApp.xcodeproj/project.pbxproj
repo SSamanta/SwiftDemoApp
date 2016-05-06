@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C2FE5281CD8C30D0042C122 /* SSHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2FE5271CD8C30D0042C122 /* SSHTTPClient.swift */; };
 		1C9289F11AD7E94C0086940A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C9289F01AD7E94C0086940A /* LaunchScreen.xib */; };
+		1CDAEA921CDCA47E0002EE9A /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAEA911CDCA47E0002EE9A /* AppService.swift */; };
+		1CDAEA941CDCA4EF0002EE9A /* AppsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAEA931CDCA4EF0002EE9A /* AppsManager.swift */; };
 		554A2BC31A19D68100AE6DC0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A2BC21A19D68100AE6DC0 /* AppConstants.swift */; };
 		5595AA621A15EF97000887B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5595AA611A15EF97000887B1 /* Default-568h@2x.png */; };
 		5595AA631A15EF97000887B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5595AA611A15EF97000887B1 /* Default-568h@2x.png */; };
@@ -18,7 +20,6 @@
 		55C6175E195069C60088F3B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C6175D195069C60088F3B1 /* Main.storyboard */; };
 		55C6177119507AE70088F3B1 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6176E19507AE70088F3B1 /* DetailsVC.swift */; };
 		55C6177219507AE70088F3B1 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6176F19507AE70088F3B1 /* RootVC.swift */; };
-		55C6177419507B3C0088F3B1 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6177319507B3C0088F3B1 /* ServiceManager.swift */; };
 		55C6177619507B530088F3B1 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C6177519507B530088F3B1 /* App.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,8 @@
 /* Begin PBXFileReference section */
 		1C2FE5271CD8C30D0042C122 /* SSHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHTTPClient.swift; sourceTree = "<group>"; };
 		1C9289F01AD7E94C0086940A /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		1CDAEA911CDCA47E0002EE9A /* AppService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		1CDAEA931CDCA4EF0002EE9A /* AppsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppsManager.swift; sourceTree = "<group>"; };
 		554A2BC21A19D68100AE6DC0 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		5595AA611A15EF97000887B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5595AA9A1A160CA4000887B1 /* CustomAppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAppCell.swift; sourceTree = "<group>"; };
@@ -47,7 +50,6 @@
 		55C6175D195069C60088F3B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		55C6176E19507AE70088F3B1 /* DetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		55C6176F19507AE70088F3B1 /* RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
-		55C6177319507B3C0088F3B1 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		55C6177519507B530088F3B1 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,22 @@
 				1C2FE5271CD8C30D0042C122 /* SSHTTPClient.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		1CDAEA8F1CDCA47E0002EE9A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				1CDAEA931CDCA4EF0002EE9A /* AppsManager.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		1CDAEA901CDCA47E0002EE9A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1CDAEA911CDCA47E0002EE9A /* AppService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5595AA601A15EF97000887B1 /* Resources */ = {
@@ -114,6 +132,8 @@
 		55C617381950692B0088F3B1 /* SwiftDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				1CDAEA8F1CDCA47E0002EE9A /* Domain */,
+				1CDAEA901CDCA47E0002EE9A /* Services */,
 				5595AA961A16033C000887B1 /* External */,
 				5595AA601A15EF97000887B1 /* Resources */,
 				55C617531950698F0088F3B1 /* Configs */,
@@ -163,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				55C6176D19507AE70088F3B1 /* ViewControllers */,
-				55C6177019507AE70088F3B1 /* ServiceManagers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,14 +212,6 @@
 				55C6176F19507AE70088F3B1 /* RootVC.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		55C6177019507AE70088F3B1 /* ServiceManagers */ = {
-			isa = PBXGroup;
-			children = (
-				55C6177319507B3C0088F3B1 /* ServiceManager.swift */,
-			);
-			path = ServiceManagers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,9 +321,10 @@
 				1C2FE5281CD8C30D0042C122 /* SSHTTPClient.swift in Sources */,
 				554A2BC31A19D68100AE6DC0 /* AppConstants.swift in Sources */,
 				55C6175C1950698F0088F3B1 /* AppDelegate.swift in Sources */,
+				1CDAEA921CDCA47E0002EE9A /* AppService.swift in Sources */,
 				55C6177119507AE70088F3B1 /* DetailsVC.swift in Sources */,
 				55C6177619507B530088F3B1 /* App.swift in Sources */,
-				55C6177419507B3C0088F3B1 /* ServiceManager.swift in Sources */,
+				1CDAEA941CDCA4EF0002EE9A /* AppsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

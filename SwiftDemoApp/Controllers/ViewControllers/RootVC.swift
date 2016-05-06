@@ -11,7 +11,7 @@ import UIKit
 class RootVC: UIViewController {
     @IBOutlet weak var tableView:UITableView!
     @IBOutlet weak var activityIndicatorView : UIActivityIndicatorView!
-    var allApps = [App ] ();
+    var allApps = [App]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +22,15 @@ class RootVC: UIViewController {
     func loadDataSource() {
         self.title = "Apps"
         self.activityIndicatorView.startAnimating()
-        let svmgr = ServiceManager()
-        svmgr.getAppDataOnCompletion { (appsArray, error) -> Void in
-            self.allApps =  appsArray as! [App]
+        AppsManager.getItunesFreeApps { (apps, error) in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.tableView.reloadData()
                 self.activityIndicatorView.stopAnimating()
+                if error != nil {
+                    print(error)
+                }else {
+                     self.allApps =  apps!
+                    self.tableView.reloadData()
+                }
             })
         }
     }
