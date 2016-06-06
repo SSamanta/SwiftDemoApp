@@ -15,24 +15,42 @@ class RootVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadInitialScene()
 		self.loadDataSource()
+    }
+    func loadInitialScene(){
+        self.title = "Apps"
         self.tableView.estimatedRowHeight = 44.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     func loadDataSource() {
-        self.title = "Apps"
-        self.activityIndicatorView.startAnimating()
+        self.showNetworkLoaderScene()
         AppsManager.getItunesFreeApps { (apps, error) in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.activityIndicatorView.stopAnimating()
-                if error != nil {
-                    print(error)
-                }else {
-                     self.allApps =  apps!
-                    self.tableView.reloadData()
-                }
-            })
+            self.handleMainSceneActivity(error, apps: apps!)
         }
+    }
+    func handleMainSceneActivity(error : NSError?, apps:[App]) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.hideNetowkrLoaderScene()
+            if error != nil {
+                self.showErrorScene(error!)
+            }else {
+                self.refreshMainScene(apps)
+            }
+        })
+    }
+    func showErrorScene(error : NSError) {
+        print(error)
+    }
+    func refreshMainScene(apps : [App]) {
+        self.allApps =  apps
+        self.tableView.reloadData()
+    }
+    func showNetworkLoaderScene() {
+        self.activityIndicatorView.startAnimating()
+    }
+    func hideNetowkrLoaderScene() {
+        self.activityIndicatorView.stopAnimating()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
