@@ -19,16 +19,18 @@ class SwiftDemoAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
+    func testLoadingApp() {
+        AppsManager.getItunesFreeApps { (apps, error) in
+            XCTAssertTrue(error != nil, "Error Occured")
+            XCTAssertTrue(apps != nil, "Apps Fetched")
+            XCTAssertTrue(apps == nil, "No apps")
+            /*if error != nil {
+                XCTFail("App Service error")
+            }else if apps != nil {
+                XCTAssert(true, "Pass App Fetched")
+            }else {
+                XCTFail("No Apps")
+            }*/
         }
     }
     

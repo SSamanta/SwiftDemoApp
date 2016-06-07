@@ -26,7 +26,9 @@ class RootVC: UIViewController {
     func loadDataSource() {
         self.showNetworkLoaderScene()
         AppsManager.getItunesFreeApps { (apps, error) in
-            self.handleMainSceneActivity(error, apps: apps!)
+            if apps != nil {
+                self.handleMainSceneActivity(error, apps: apps!)
+            }
         }
     }
     func handleMainSceneActivity(error : NSError?, apps:[App]) {
