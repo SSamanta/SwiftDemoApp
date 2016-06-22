@@ -11,7 +11,7 @@ import UIKit
 typealias AppsHandler = (apps :[App]?, error :NSError?) ->Void
 
 class AppsManager: NSObject {
-    class func getItunesFreeApps(appsHandler : AppsHandler) {
+    class func getItunesFreeApps(_ appsHandler : AppsHandler) {
         AppService.getiTunesFreeAppsOnCompletion { (json, error) in
             if error != nil {
                 appsHandler(apps: nil , error: error)

@@ -31,8 +31,8 @@ class RootVC: UIViewController {
             }
         }
     }
-    func handleMainSceneActivity(error : NSError?, apps:[App]) {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+    func handleMainSceneActivity(_ error : NSError?, apps:[App]) {
+        DispatchQueue.main.async(execute: { () -> Void in
             self.hideNetowkrLoaderScene()
             if error != nil {
                 self.showErrorScene(error!)
@@ -41,10 +41,10 @@ class RootVC: UIViewController {
             }
         })
     }
-    func showErrorScene(error : NSError) {
+    func showErrorScene(_ error : NSError) {
         print(error)
     }
-    func refreshMainScene(apps : [App]) {
+    func refreshMainScene(_ apps : [App]) {
         self.allApps =  apps
         self.tableView.reloadData()
     }
@@ -57,20 +57,20 @@ class RootVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.allApps.count
     }
     
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         let identifier = "CustomAppCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! CustomAppCell
-        let app = self.allApps[indexPath.row] as App
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CustomAppCell
+        let app = self.allApps[(indexPath as NSIndexPath).row] as App
         cell.refreshWithDataSource(app)
         return cell
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        let detailsVC :DetailsVC = storyboard?.instantiateViewControllerWithIdentifier("DetailsVC") as! DetailsVC
-        detailsVC.refreshWithDataSource(self.allApps[indexPath.row] as App)
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath){
+        let detailsVC :DetailsVC = storyboard?.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsVC
+        detailsVC.refreshWithDataSource(self.allApps[(indexPath as NSIndexPath).row] as App)
         self.navigationController?.pushViewController(detailsVC, animated:true);
     }
 }

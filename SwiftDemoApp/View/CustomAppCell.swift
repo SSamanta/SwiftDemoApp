@@ -19,10 +19,10 @@ class CustomAppCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    func refreshWithDataSource(app:App) {
+    func refreshWithDataSource(_ app:App) {
         
         self.appNameLbl.text =  app.appName
         self.appArtistLbl.text =  "Developed By \(app.appArtists!)"
@@ -30,8 +30,8 @@ class CustomAppCell: UITableViewCell {
         let apiClient = SSHTTPClient(url: app.appThumnailImageLink! as String, method: "GET", httpBody: nil, headerFieldsAndValues: nil)
 		apiClient.getResponseData({ (obj, error) -> Void in
             if (error == nil) {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    let imageData =  obj as! NSData?
+                DispatchQueue.main.async(execute: { () -> Void in
+                    let imageData =  obj as! Data?
                     let bgImage = UIImage(data: imageData!)
                     self.thumnailImageView.image = bgImage})
             }else {
@@ -40,10 +40,10 @@ class CustomAppCell: UITableViewCell {
 
         })
     }
-    func setCircularImage(image: UIImageView) {
+    func setCircularImage(_ image: UIImageView) {
         image.layer.borderWidth = 1
         image.layer.masksToBounds = false
-        image.layer.borderColor = UIColor.blackColor().CGColor
+        image.layer.borderColor = UIColor.black().cgColor
         image.layer.cornerRadius = image.frame.height/2
         image.clipsToBounds = true
     }

@@ -20,7 +20,7 @@ class DetailsVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    func refreshWithDataSource(app : App) {
+    func refreshWithDataSource(_ app : App) {
         self.app = app
     }
 }
