@@ -8,14 +8,14 @@
 
 import UIKit
 
-typealias ServiceCompletionHandler = (json :AnyObject?, error :NSError?) ->Void
+typealias ServiceCompletionHandler = (_ json :AnyObject?, _ error :NSError?) ->Void
 
 class AppService: NSObject {
-    class func getiTunesFreeAppsOnCompletion(_ serviceCompletionHandler : ServiceCompletionHandler) {
-        let itunesFreeAppsUrlString : NSString = kItunesURLString;
+    class func getiTunesFreeAppsOnCompletion(_ serviceCompletionHandler : @escaping ServiceCompletionHandler) {
+        let itunesFreeAppsUrlString : NSString = kItunesURLString as NSString;
         let freeAppsClient = SSHTTPClient(url: itunesFreeAppsUrlString as String, method: "GET", httpBody: nil, headerFieldsAndValues: nil)
 		freeAppsClient.getJsonData({ (obj , error) -> Void in
-            serviceCompletionHandler(json: obj, error: error)
+            serviceCompletionHandler(obj, error)
         })
     }
 }

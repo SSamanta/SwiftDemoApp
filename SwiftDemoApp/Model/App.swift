@@ -16,10 +16,19 @@ class App: NSObject {
     var appArtists : String?
     
      init(dict : NSDictionary) {
-        self.appName = dict["im:name"]!["label"] as! String?
-        self.appThumnailImageLink =  dict["im:image"]![0]["label"] as! String?
-        self.appSummary = dict["summary"]!["label"] as! String?
-        self.appPrice =  dict ["im:price"]!["label"] as! String?
-        self.appArtists = dict ["im:artist"]!["label"] as! String?
+        let nameDict = dict["im:name"] as? NSDictionary
+        self.appName = nameDict!["label"] as! String?
+        let imageDictList = dict["im:image"] as? NSArray
+        if (imageDictList != nil) {
+            let imageDict = imageDictList![0] as? NSDictionary
+            self.appThumnailImageLink =  imageDict!["label"] as! String?
+        }
+        
+        let summaryDict = dict["summary"] as? NSDictionary
+        self.appSummary = summaryDict!["label"] as! String?
+        let priceDict = dict ["im:price"] as? NSDictionary
+        self.appPrice =  priceDict!["label"] as! String?
+        let artistDict = dict["im:artist"] as? NSDictionary
+        self.appArtists = artistDict!["label"] as! String?
     }
 }

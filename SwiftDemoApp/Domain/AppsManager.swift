@@ -8,21 +8,22 @@
 
 import UIKit
 
-typealias AppsHandler = (apps :[App]?, error :NSError?) ->Void
+typealias AppsHandler = (_ apps :[App]?, _ error :NSError?) ->Void
 
 class AppsManager: NSObject {
-    class func getItunesFreeApps(_ appsHandler : AppsHandler) {
+    class func getItunesFreeApps(_ appsHandler : @escaping AppsHandler) {
         AppService.getiTunesFreeAppsOnCompletion { (json, error) in
             if error != nil {
-                appsHandler(apps: nil , error: error)
+                appsHandler(nil , error)
             }else {
                 let jsonDict = json as! NSDictionary
-                if let apps = jsonDict["feed"]!["entry"] as? NSArray{
+                let feedDict = jsonDict["feed"] as? NSDictionary
+                if let apps = feedDict!["entry"] as? NSArray{
                     var allApps = [App]()
                     for app in apps {
                         allApps.append(App(dict: app as! NSDictionary))
                     }
-                    appsHandler(apps: allApps , error: nil)
+                    appsHandler(allApps , nil)
                 }
             }
         }
